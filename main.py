@@ -5,12 +5,10 @@ def mostrar_encabezado():
     print("***************** BIENVENIDO *******************")
     print("***********************************************")
     print("IMPORTANTE: Para seleccionar las opciones use números.")
-
 def obtener_datos_cliente():
     nombre = input("Ingrese su nombre: ")
     cdi = input("Ingrese su cédula: ")
     return nombre, cdi
-
 def mostrar_menu_principal():
     print("========== MENÚ PRINCIPAL ==========")
     print("1. Alimento para mascotas")
@@ -19,37 +17,145 @@ def mostrar_menu_principal():
     print("4. Finalizar compra")
     print("5. Salir")
     return input("Seleccione una opción: ")
-
-def mostrar_submenu_alimentos():
-    print("========= ALIMENTOS =========")
-    print("1. Comida para perros")
-    print("2. Comida para gatos")
-    print("3. Comida para peces")
-    print("4. Comida para aves")
-    print("5. Regresar")
-    print("6. Salir")
-    return input("Seleccione: ")
-
-def mostrar_productos(titulo, productos):
-    print(f"------ {titulo} ------")
-    for i, (nombre, precio) in enumerate(productos, 1):
-        print(f"{i}. {nombre} - ${precio}")
-    print("5. Regresar")
-    print("6. Salir")
-    return input("Seleccione: ")
-
-def procesar_producto(compra, total, productos, opcion):
-    if opcion in productos:
-        idx = int(opcion) - 1
-        nombre, precio = productos[idx]
-        compra += f"{nombre} - ${precio} "
-        total += precio
-    return compra, total
-
+def menu_comida_perros(compra, total, salir):
+    while True:
+        print("------ COMIDA PARA PERROS ------")
+        print("1. Dog Chow - $15")
+        print("2. Pedigree - $18")
+        print("3. Pro Plan - $25")
+        print("4. Royal Canin - $30")
+        print("5. Regresar")
+        print("6. Salir")
+        op = input("Seleccione: ")
+        if op == "1":
+            compra += "Dog Chow - $15 "
+            total += 15
+        elif op == "2":
+            compra += "Pedigree - $18 "
+            total += 18
+        elif op == "3":
+            compra += "Pro Plan - $25 "
+            total += 25
+        elif op == "4":
+            compra += "Royal Canin - $30 "
+            total += 30
+        elif op == "5":
+            break
+        elif op == "6":
+            salir = True
+            break
+        else:
+            print("Opción incorrecta")
+        if salir == True:
+            break
+    return compra, total, salir
+def menu_comida_gatos(compra, total, salir):
+    while True:
+        print("------ COMIDA PARA GATOS ------")
+        print("1. Whiskas - $10")
+        print("2. Cat Chow - $14")
+        print("3. Pro Plan Gatos - $22")
+        print("4. Royal Canin Gatos - $28")
+        print("5. Regresar")
+        print("6. Salir")
+        op = input("Seleccione: ")
+        if op == "1":
+            compra += "Whiskas - $10 "
+            total += 10
+        elif op == "2":
+            compra += "Cat Chow - $14 "
+            total += 14
+        elif op == "3":
+            compra += "Pro Plan Gatos - $22 "
+            total += 22
+        elif op == "4":
+            compra += "Royal Canin Gatos - $28 "
+            total += 28
+        elif op == "5":
+            break
+        elif op == "6":
+            salir = True
+            break
+        else:
+            print("Opción incorrecta")
+        if salir == True:
+            break
+    return compra, total, salir
+def menu_comida_peces(compra, total, salir):
+    while True:
+        print("------ COMIDA PARA PECES ------")
+        print("1. Tetramin - $5")
+        print("2. Nutrafin - $7")
+        print("3. Sera Vipan - $9")
+        print("4. Tetra Goldfish - $11")
+        print("5. Regresar")
+        print("6. Salir")
+        op = input("Seleccione: ")
+        if op == "1":
+            compra += "Tetramin - $5 "
+            total += 5
+        elif op == "2":
+            compra += "Nutrafin - $7 "
+            total += 7
+        elif op == "3":
+            compra += "Sera Vipan - $9 "
+            total += 9
+        elif op == "4":
+            compra += "Tetra Goldfish - $11 "
+            total += 11
+        elif op == "5":
+            break
+        elif op == "6":
+            salir = True
+            break
+        else:
+            print("Opción incorrecta")
+        
+        if salir == True:
+            break
+    return compra, total, salir
+def menu_comida_aves(compra, total, salir):
+    while True:
+        print("------ COMIDA PARA AVES ------")
+        print("1. Semillas Premium - $7")
+        print("2. Vitakraft - $10")
+        print("3. Kaytee - $13")
+        print("4. ZuPreem - $16")
+        print("5. Regresar")
+        print("6. Salir")
+        op = input("Seleccione: ")
+        if op == "1":
+            compra += "Semillas Premium - $7 "
+            total += 7
+        elif op == "2":
+            compra += "Vitakraft - $10 "
+            total += 10
+        elif op == "3":
+            compra += "Kaytee - $13 "
+            total += 13
+        elif op == "4":
+            compra += "ZuPreem - $16 "
+            total += 16
+        elif op == "5":
+            break
+        elif op == "6":
+            salir = True
+            break
+        else:
+            print("Opción incorrecta")
+        if salir == True:
+            break
+    return compra, total, salir
 def menu_alimentos(compra, total, salir):
     while True:
-        smenu = mostrar_submenu_alimentos()
-        
+        print("========= ALIMENTOS =========")
+        print("1. Comida para perros")
+        print("2. Comida para gatos")
+        print("3. Comida para peces")
+        print("4. Comida para aves")
+        print("5. Regresar")
+        print("6. Salir")
+        smenu = input("Seleccione: ")
         if smenu == "1":
             compra, total, salir = menu_comida_perros(compra, total, salir)
         elif smenu == "2":
@@ -65,23 +171,31 @@ def menu_alimentos(compra, total, salir):
             break
         else:
             print("Opción incorrecta")
-        
-        if salir:
+        if salir == True:
             break
-    
     return compra, total, salir
-
-def menu_comida_perros(compra, total, salir):
-    productos = [
-        ("Dog Chow", 15),
-        ("Pedigree", 18),
-        ("Pro Plan", 25),
-        ("Royal Canin", 30)
-    ]
+def menu_accesorios_perros(compra, total, salir):
     while True:
-        op = mostrar_productos("COMIDA PARA PERROS", productos)
-        if op in ["1", "2", "3", "4"]:
-            compra, total = procesar_producto(compra, total, productos, op)
+        print("------ Accesorios para perros ------")
+        print("1. Juguete mordedor - $1.99")
+        print("2. Correa - $5")
+        print("3. Cama - $20")
+        print("4. Plato - $8")
+        print("5. Regresar")
+        print("6. Salir")
+        op = input("Seleccione: ")
+        if op == "1":
+            compra += "Juguete mordedor - $1.99 "
+            total += 1.99
+        elif op == "2":
+            compra += "Correa - $5 "
+            total += 5
+        elif op == "3":
+            compra += "Cama - $20 "
+            total += 20
+        elif op == "4":
+            compra += "Plato - $8 "
+            total += 8
         elif op == "5":
             break
         elif op == "6":
@@ -89,21 +203,31 @@ def menu_comida_perros(compra, total, salir):
             break
         else:
             print("Opción incorrecta")
-        if salir:
+        if salir == True:
             break
     return compra, total, salir
-
-def menu_comida_gatos(compra, total, salir):
-    productos = [
-        ("Whiskas", 10),
-        ("Cat Chow", 14),
-        ("Pro Plan Gatos", 22),
-        ("Royal Canin Gatos", 28)
-    ]
+def menu_accesorios_gatos(compra, total, salir):
     while True:
-        op = mostrar_productos("COMIDA PARA GATOS", productos)
-        if op in ["1", "2", "3", "4"]:
-            compra, total = procesar_producto(compra, total, productos, op)
+        print("------ Accesorios para gatos ------")
+        print("1. Collar - $1.99")
+        print("2. Rascador - $15")
+        print("3. Cama - $18")
+        print("4. Juguete con plumas - $6")
+        print("5. Regresar")
+        print("6. Salir")
+        op = input("Seleccione: ")
+        if op == "1":
+            compra += "Collar gato - $1.99 "
+            total += 1.99
+        elif op == "2":
+            compra += "Rascador - $15 "
+            total += 15
+        elif op == "3":
+            compra += "Cama gato - $18 "
+            total += 18
+        elif op == "4":
+            compra += "Juguete plumas - $6 "
+            total += 6
         elif op == "5":
             break
         elif op == "6":
@@ -111,21 +235,31 @@ def menu_comida_gatos(compra, total, salir):
             break
         else:
             print("Opción incorrecta")
-        if salir:
+        if salir == True:
             break
     return compra, total, salir
-
-def menu_comida_peces(compra, total, salir):
-    productos = [
-        ("Tetramin", 5),
-        ("Nutrafin", 7),
-        ("Sera Vipan", 9),
-        ("Tetra Goldfish", 11)
-    ]
+def menu_accesorios_peces(compra, total, salir):
     while True:
-        op = mostrar_productos("COMIDA PARA PECES", productos)
-        if op in ["1", "2", "3", "4"]:
-            compra, total = procesar_producto(compra, total, productos, op)
+        print("------ Accesorios para peces ------")
+        print("1. Tunnel - $3.50")
+        print("2. Pecera - $25")
+        print("3. Filtro - $12")
+        print("4. Decoración - $9")
+        print("5. Regresar")
+        print("6. Salir")
+        op = input("Seleccione: ")
+        if op == "1":
+            compra += "Tunnel peces - $3.50 "
+            total += 3.50
+        elif op == "2":
+            compra += "Pecera - $25 "
+            total += 25
+        elif op == "3":
+            compra += "Filtro - $12 "
+            total += 12
+        elif op == "4":
+            compra += "Decoración - $9 "
+            total += 9
         elif op == "5":
             break
         elif op == "6":
@@ -133,21 +267,31 @@ def menu_comida_peces(compra, total, salir):
             break
         else:
             print("Opción incorrecta")
-        if salir:
+        if salir == True:
             break
     return compra, total, salir
-
-def menu_comida_aves(compra, total, salir):
-    productos = [
-        ("Semillas Premium", 7),
-        ("Vitakraft", 10),
-        ("Kaytee", 13),
-        ("ZuPreem", 16)
-    ]
+def menu_accesorios_aves(compra, total, salir):
     while True:
-        op = mostrar_productos("COMIDA PARA AVES", productos)
-        if op in ["1", "2", "3", "4"]:
-            compra, total = procesar_producto(compra, total, productos, op)
+        print("------ Accesorios para aves ------")
+        print("1. Juguete espejo - $4.99")
+        print("2. Jaula - $30")
+        print("3. Comedero - $7")
+        print("4. Campana - $5")
+        print("5. Regresar")
+        print("6. Salir")
+        op = input("Seleccione: ")
+        if op == "1":
+            compra += "Juguete espejo - $4.99 "
+            total += 4.99
+        elif op == "2":
+            compra += "Jaula - $30 "
+            total += 30
+        elif op == "3":
+            compra += "Comedero - $7 "
+            total += 7
+        elif op == "4":
+            compra += "Campana - $5 "
+            total += 5
         elif op == "5":
             break
         elif op == "6":
@@ -155,10 +299,9 @@ def menu_comida_aves(compra, total, salir):
             break
         else:
             print("Opción incorrecta")
-        if salir:
+        if salir == True:
             break
     return compra, total, salir
-
 def menu_juguetes(compra, total, salir):
     while True:
         print("======= JUGUETES Y ACCESORIOS =======")
@@ -169,7 +312,6 @@ def menu_juguetes(compra, total, salir):
         print("5. Regresar")
         print("6. Salir")
         smenu = input("Seleccione: ")
-        
         if smenu == "1":
             compra, total, salir = menu_accesorios_perros(compra, total, salir)
         elif smenu == "2":
@@ -185,100 +327,9 @@ def menu_juguetes(compra, total, salir):
             break
         else:
             print("Opción incorrecta")
-        
-        if salir:
-            break
-    
-    return compra, total, salir
-
-def menu_accesorios_perros(compra, total, salir):
-    productos = [
-        ("Juguete mordedor", 1.99),
-        ("Correa", 5),
-        ("Cama", 20),
-        ("Plato", 8)
-    ]
-    while True:
-        op = mostrar_productos("Accesorios para perros", productos)
-        if op in ["1", "2", "3", "4"]:
-            compra, total = procesar_producto(compra, total, productos, op)
-        elif op == "5":
-            break
-        elif op == "6":
-            salir = True
-            break
-        else:
-            print("Opción incorrecta")
-        if salir:
+        if salir == True:
             break
     return compra, total, salir
-
-def menu_accesorios_gatos(compra, total, salir):
-    productos = [
-        ("Collar gato", 1.99),
-        ("Rascador", 15),
-        ("Cama gato", 18),
-        ("Juguete plumas", 6)
-    ]
-    while True:
-        op = mostrar_productos("Accesorios para gatos", productos)
-        if op in ["1", "2", "3", "4"]:
-            compra, total = procesar_producto(compra, total, productos, op)
-        elif op == "5":
-            break
-        elif op == "6":
-            salir = True
-            break
-        else:
-            print("Opción incorrecta")
-        if salir:
-            break
-    return compra, total, salir
-
-def menu_accesorios_peces(compra, total, salir):
-    productos = [
-        ("Tunnel peces", 3.50),
-        ("Pecera", 25),
-        ("Filtro", 12),
-        ("Decoración", 9)
-    ]
-    while True:
-        op = mostrar_productos("Accesorios para peces", productos)
-        if op in ["1", "2", "3", "4"]:
-            compra, total = procesar_producto(compra, total, productos, op)
-        elif op == "5":
-            break
-        elif op == "6":
-            salir = True
-            break
-        else:
-            print("Opción incorrecta")
-        if salir:
-            break
-    return compra, total, salir
-
-def menu_accesorios_aves(compra, total, salir):
-    productos = [
-        ("Juguete espejo", 4.99),
-        ("Jaula", 30),
-        ("Comedero", 7),
-        ("Campana", 5)
-    ]
-    while True:
-        op = mostrar_productos("Accesorios para aves", productos)
-        if op in ["1", "2", "3", "4"]:
-            compra, total = procesar_producto(compra, total, productos, op)
-        elif op == "5":
-            break
-        elif op == "6":
-            salir = True
-            break
-        else:
-            print("Opción incorrecta")
-        if salir:
-            break
-    return compra, total, salir
-
 def mostrar_resumen(nombre, cdi, compra, total):
     print("========================================")
     print("          RESUMEN DE COMPRA")
@@ -292,37 +343,28 @@ def mostrar_resumen(nombre, cdi, compra, total):
     print(f"TOTAL A PAGAR: ${total:.2f}")
     print("Gracias por visitar JUJAM PET :D")
     print("========================================")
-
-def main():
-    mostrar_encabezado()
-    nombre, cdi = obtener_datos_cliente()
-    
-    total = 0
-    compra = ""
-    salir = False
-    
-    while not salir:
-        menu = mostrar_menu_principal()
-        
-        if menu == "1":
-            compra, total, salir = menu_alimentos(compra, total, salir)
-        elif menu == "2":
-            compra, total, salir = menu_juguetes(compra, total, salir)
-        elif menu == "3":
-            print("Servicio de baño agregado.")
-            compra += "Servicio de baño pet - $8 "
-            total += 8
-        elif menu == "4":
-            break
-        elif menu == "5":
-            salir = True
-        else:
-            print("Opción inválida.")
-    
-    if total > 0:
-        mostrar_resumen(nombre, cdi, compra, total)
+mostrar_encabezado()
+nombre, cdi = obtener_datos_cliente()
+total = 0
+compra = ""
+salir = False
+while salir == False:
+    menu = mostrar_menu_principal()
+    if menu == "1":
+        compra, total, salir = menu_alimentos(compra, total, salir)
+    elif menu == "2":
+        compra, total, salir = menu_juguetes(compra, total, salir)
+    elif menu == "3":
+        print("Servicio de baño agregado.")
+        compra += "Servicio de baño pet - $8 "
+        total += 8
+    elif menu == "4":
+        break
+    elif menu == "5":
+        salir = True
     else:
-        print("No realizó ninguna compra. ¡Vuelva pronto!")
-
-if __name__ == "__main__":
-    main()
+        print("Opción inválida.")
+if total > 0:
+    mostrar_resumen(nombre, cdi, compra, total)
+else:
+    print("No realizó ninguna compra D:")
