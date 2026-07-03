@@ -355,7 +355,7 @@ while salir == False:
         compra, total, salir = juguetes(compra, total, salir)
     elif menu == "3":
         print("Servicio de baño agregado.")
-        compra += "Servicio de baño pet - $8\n"  # Cambiado: \n en lugar de espacio
+        compra += "Servicio de baño pet - $8 "  
         total += 8
     elif menu == "4":
         break
