@@ -3,7 +3,7 @@ def presentacion():
     print("****************** JUJAM PET *******************")
     print("************************************************")
     print("***************** BIENVENIDO *******************")
-    print("***********************************************")
+    print("************************************************")
     print("IMPORTANTE: Para seleccionar las opciones use números.")
 def datos_cliente():
     nombre = input("Ingrese su nombre: ")
