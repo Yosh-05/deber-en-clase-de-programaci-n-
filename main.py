@@ -1,15 +1,15 @@
-def mostrar_encabezado():
+def presentacion():
     print("************************************************")
     print("****************** JUJAM PET *******************")
     print("************************************************")
     print("***************** BIENVENIDO *******************")
     print("***********************************************")
     print("IMPORTANTE: Para seleccionar las opciones use números.")
-def obtener_datos_cliente():
+def datos_cliente():
     nombre = input("Ingrese su nombre: ")
     cdi = input("Ingrese su cédula: ")
     return nombre, cdi
-def mostrar_menu_principal():
+def menu_principal():
     print("========== MENÚ PRINCIPAL ==========")
     print("1. Alimento para mascotas")
     print("2. Juguetes y accesorios")
@@ -17,7 +17,7 @@ def mostrar_menu_principal():
     print("4. Finalizar compra")
     print("5. Salir")
     return input("Seleccione una opción: ")
-def menu_comida_perros(compra, total, salir):
+def comida_perros(compra, total, salir):
     while True:
         print("------ COMIDA PARA PERROS ------")
         print("1. Dog Chow - $15")
@@ -49,7 +49,7 @@ def menu_comida_perros(compra, total, salir):
         if salir == True:
             break
     return compra, total, salir
-def menu_comida_gatos(compra, total, salir):
+def comida_gatos(compra, total, salir):
     while True:
         print("------ COMIDA PARA GATOS ------")
         print("1. Whiskas - $10")
@@ -81,7 +81,7 @@ def menu_comida_gatos(compra, total, salir):
         if salir == True:
             break
     return compra, total, salir
-def menu_comida_peces(compra, total, salir):
+def comida_peces(compra, total, salir):
     while True:
         print("------ COMIDA PARA PECES ------")
         print("1. Tetramin - $5")
@@ -114,7 +114,7 @@ def menu_comida_peces(compra, total, salir):
         if salir == True:
             break
     return compra, total, salir
-def menu_comida_aves(compra, total, salir):
+def comida_aves(compra, total, salir):
     while True:
         print("------ COMIDA PARA AVES ------")
         print("1. Semillas Premium - $7")
@@ -157,13 +157,13 @@ def menu_alimentos(compra, total, salir):
         print("6. Salir")
         smenu = input("Seleccione: ")
         if smenu == "1":
-            compra, total, salir = menu_comida_perros(compra, total, salir)
+            compra, total, salir = comida_perros(compra, total, salir)
         elif smenu == "2":
-            compra, total, salir = menu_comida_gatos(compra, total, salir)
+            compra, total, salir = comida_gatos(compra, total, salir)
         elif smenu == "3":
-            compra, total, salir = menu_comida_peces(compra, total, salir)
+            compra, total, salir = comida_peces(compra, total, salir)
         elif smenu == "4":
-            compra, total, salir = menu_comida_aves(compra, total, salir)
+            compra, total, salir = comida_aves(compra, total, salir)
         elif smenu == "5":
             break
         elif smenu == "6":
@@ -174,7 +174,7 @@ def menu_alimentos(compra, total, salir):
         if salir == True:
             break
     return compra, total, salir
-def menu_accesorios_perros(compra, total, salir):
+def accesorios_perros(compra, total, salir):
     while True:
         print("------ Accesorios para perros ------")
         print("1. Juguete mordedor - $1.99")
@@ -206,7 +206,7 @@ def menu_accesorios_perros(compra, total, salir):
         if salir == True:
             break
     return compra, total, salir
-def menu_accesorios_gatos(compra, total, salir):
+def accesorios_gatos(compra, total, salir):
     while True:
         print("------ Accesorios para gatos ------")
         print("1. Collar - $1.99")
@@ -238,7 +238,7 @@ def menu_accesorios_gatos(compra, total, salir):
         if salir == True:
             break
     return compra, total, salir
-def menu_accesorios_peces(compra, total, salir):
+def accesorios_peces(compra, total, salir):
     while True:
         print("------ Accesorios para peces ------")
         print("1. Tunnel - $3.50")
@@ -270,7 +270,7 @@ def menu_accesorios_peces(compra, total, salir):
         if salir == True:
             break
     return compra, total, salir
-def menu_accesorios_aves(compra, total, salir):
+def accesorios_aves(compra, total, salir):
     while True:
         print("------ Accesorios para aves ------")
         print("1. Juguete espejo - $4.99")
@@ -302,7 +302,7 @@ def menu_accesorios_aves(compra, total, salir):
         if salir == True:
             break
     return compra, total, salir
-def menu_juguetes(compra, total, salir):
+def juguetes(compra, total, salir):
     while True:
         print("======= JUGUETES Y ACCESORIOS =======")
         print("1. Accesorios para perros")
@@ -313,13 +313,13 @@ def menu_juguetes(compra, total, salir):
         print("6. Salir")
         smenu = input("Seleccione: ")
         if smenu == "1":
-            compra, total, salir = menu_accesorios_perros(compra, total, salir)
+            compra, total, salir = accesorios_perros(compra, total, salir)
         elif smenu == "2":
-            compra, total, salir = menu_accesorios_gatos(compra, total, salir)
+            compra, total, salir = accesorios_gatos(compra, total, salir)
         elif smenu == "3":
-            compra, total, salir = menu_accesorios_peces(compra, total, salir)
+            compra, total, salir = accesorios_peces(compra, total, salir)
         elif smenu == "4":
-            compra, total, salir = menu_accesorios_aves(compra, total, salir)
+            compra, total, salir = accesorios_aves(compra, total, salir)
         elif smenu == "5":
             break
         elif smenu == "6":
@@ -330,7 +330,7 @@ def menu_juguetes(compra, total, salir):
         if salir == True:
             break
     return compra, total, salir
-def mostrar_resumen(nombre, cdi, compra, total):
+def resumen_compra(nombre, cdi, compra, total):
     print("========================================")
     print("          RESUMEN DE COMPRA")
     print("========================================")
@@ -338,22 +338,22 @@ def mostrar_resumen(nombre, cdi, compra, total):
     print("Cédula:", cdi)
     print("----------------------------------------")
     print("Productos seleccionados:")
-    print(compra)
+    print(compra)    
     print("----------------------------------------")
-    print(f"TOTAL A PAGAR: ${total:.2f}")
+    print(f"TOTAL A PAGAR: ${total:}")
     print("Gracias por visitar JUJAM PET :D")
     print("========================================")
-mostrar_encabezado()
-nombre, cdi = obtener_datos_cliente()
+presentacion
+nombre, cdi = datos_cliente()
 total = 0
 compra = ""
 salir = False
 while salir == False:
-    menu = mostrar_menu_principal()
+    menu = menu_principal()
     if menu == "1":
         compra, total, salir = menu_alimentos(compra, total, salir)
     elif menu == "2":
-        compra, total, salir = menu_juguetes(compra, total, salir)
+        compra, total, salir = juguetes(compra, total, salir)
     elif menu == "3":
         print("Servicio de baño agregado.")
         compra += "Servicio de baño pet - $8 "
@@ -365,6 +365,6 @@ while salir == False:
     else:
         print("Opción inválida.")
 if total > 0:
-    mostrar_resumen(nombre, cdi, compra, total)
+    resumen_compra(nombre, cdi, compra, total)
 else:
-    print("No realizó ninguna compra D:")
+    print("Gracias por visitarnos, te esperamos :D")
